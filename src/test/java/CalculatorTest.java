@@ -11,68 +11,68 @@ public class CalculatorTest {
         calculator = new Calculator();
     }
 
-    @Test(groups = {"simpleCalculation"})
-    private void testAdditionOfTwoNumbers(){
-        //Arrange
-        int firstNumber = 5;
-        int secondNumber = 10;
+    @Test(groups = {"simpleCalculation"}, dataProviderClass = DataProviderForCalculator.class, dataProvider = "additionData")
+    private void testAdditionOfTwoNumbers(int firstNumber, int secondNumber, int result){
+//        //Arrange
+//        int firstNumber = 5;
+//        int secondNumber = 10;
 
         //Act
         int sum = calculator.add(firstNumber, secondNumber);
 
         //Assert
-        Assert.assertEquals(sum, 15);
+        Assert.assertEquals(sum, result);
     }
 
-    @Test(groups = {"simpleCalculation"})
-    private void testSubtractionOfTwoNumbers(){
-        //Arrange
-        int firstNumber = 10;
-        int secondNumber = 5;
+    @Test(groups = {"simpleCalculation"}, dataProviderClass = DataProviderForCalculator.class, dataProvider = "subtractionData")
+    private void testSubtractionOfTwoNumbers(int firstNumber, int secondNumber, int result){
+//        //Arrange
+//        int firstNumber = 10;
+//        int secondNumber = 5;
 
         //Act
         int subtraction = calculator.subtract(firstNumber, secondNumber);
 
         //Assert
-        Assert.assertEquals(subtraction, 5);
+        Assert.assertEquals(subtraction, result);
     }
 
-    @Test(groups = {"simpleCalculation"})
-    private void testMultiplicationOfTwoNumbers(){
-        //Arrange
-        int firstNumber = 5;
-        int secondNumber = 10;
+    @Test(groups = {"simpleCalculation"}, dataProviderClass = DataProviderForCalculator.class, dataProvider = "multiplicationData")
+    private void testMultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int result){
+//        //Arrange
+//        int firstNumber = 5;
+//        int secondNumber = 10;
 
         //Act
         int multiplication = calculator.multiply(firstNumber, secondNumber);
 
         //Assert
-        Assert.assertEquals(multiplication, 50);
+        Assert.assertEquals(multiplication, result);
     }
 
-    @Test(groups = {"complexCalculation"})
-    private void testPercentageOfTwoNumbers(){
-        //Arrange
-        int firstNumber = 5;
-        int secondNumber = 10;
+    @Test(groups = {"complexCalculation"}, dataProviderClass = DataProviderForCalculator.class, dataProvider = "percentageData")
+    private void testPercentageOfTwoNumbers(int firstNumber, int secondNumber, int result){
+//        //Arrange
+//        int firstNumber = 5;
+//        int secondNumber = 10;
 
         //Act
         double percentage = calculator.percentage(firstNumber, secondNumber);
 
         //Assert
-        Assert.assertEquals(percentage, 50.0);
+        Assert.assertEquals(percentage, result);
     }
 
-    @Test(groups = {"complexCalculation"})
-    private void testSquareOfANumber(){
-        //Arrange
-        int number = 5;
+    @Test(groups = {"complexCalculation"}, dataProviderClass = DataProviderForCalculator.class, dataProvider = "squareData")
+    private void testSquareOfANumber(int number, int result){
+//        //Arrange
+//        int number = 5;
 
         //Act
         int square = calculator.square(number);
 
         //Assert
-        Assert.assertEquals(square, 25);
+        Assert.assertEquals(square, result);
     }
 
     @AfterMethod
